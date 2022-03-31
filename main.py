@@ -6,7 +6,7 @@ from telebot import types
 import telebot
 
 TOKEN = 'ВАШ ТОКЕН'
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(5062379047:AAHR_qfGMypD4PxnFzKdq6gs6Ppr0KcWXRI)
 server = Flask(__name__)
 
 
@@ -23,7 +23,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://<Название_вашего_хероку_приложения>.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://blrite.herokuapp.com/' + 5062379047:AAHR_qfGMypD4PxnFzKdq6gs6Ppr0KcWXRI)
     return "!", 200
 
 if __name__ == "__main__":
