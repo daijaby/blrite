@@ -10,7 +10,7 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 
-#КОД ТЕЛЕБОТА
+
 !pip install pyTelegramBotAPI
 import telebot
 from telebot import types
@@ -22,11 +22,11 @@ def start(m, res=False):
     bot.send_message(m.chat.id, 'Привет, напиши что-нибудь! )')
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
-    bot.send_message(message.chat.id, 'Ага, значит ' + message.text)
+    bot.send_message(message.chat.id, '...и говорил он "' + message.text + '"')
 
 
 bot.polling(none_stop = True)
-#КОД ТЕЛЕБОТА
+
 
 
 @server.route('/' + TOKEN, methods=['POST'])
