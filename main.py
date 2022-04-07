@@ -5,26 +5,18 @@ from telebot import types
 
 import telebot
 
-TOKEN = '5062379047:AAHR_qfGMypD4PxnFzKdq6gs6Ppr0KcWXRI'
+TOKEN = '5286040884:AAGJ5Qx-2uc4tu0mCJ9ewN4cWdRoWQptbTg'
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 
-
-
-import telebot
-from telebot import types
-
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
     bot.send_message(m.chat.id, 'Привет, напиши что-нибудь! )')
+    
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     bot.send_message(message.chat.id, '...и говорил он "' + message.text + '"')
-
-
-bot.polling(none_stop = True)
-
 
 
 @server.route('/' + TOKEN, methods=['POST'])
@@ -37,7 +29,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://blrite.herokuapp.com/' + TOKEN)
+    bot.set_webhook(url='https://bazzzz.herokuapp.com/' + TOKEN)
     return "!", 200
 
 if __name__ == "__main__":
