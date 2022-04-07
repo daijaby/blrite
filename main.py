@@ -11,11 +11,9 @@ server = Flask(__name__)
 
 
 
-!pip install pyTelegramBotAPI
+
 import telebot
 from telebot import types
-
-bot = telebot.TeleBot("5062379047:AAHR_qfGMypD4PxnFzKdq6gs6Ppr0KcWXRI")
 
 @bot.message_handler(commands=["start"])
 def start(m, res=False):
